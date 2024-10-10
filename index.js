@@ -105,8 +105,8 @@ bot.onText(/\/leaderboard/, async (msg) => {
 bot.onText(/\/form/, (msg) => {
   const chatId = msg.chat.id;
   const now = moment();
-  const startTime = moment("06:00:00", "HH:mm:ss");
-  const endTime = moment("08:00:00", "HH:mm:ss");
+  const startTime = moment("16:00:00", "HH:mm:ss");
+  const endTime = moment("17:00:00", "HH:mm:ss");
 
   if (now.isBetween(startTime, endTime)) {
     bot.sendMessage(chatId, "Good Morning! Please enter your name:");
