@@ -2,6 +2,7 @@ const express = require('express');
 const TelegramBot = require("node-telegram-bot-api");
 const { google } = require("googleapis");
 const moment = require("moment");
+const moment = require("moment-timezone");
 require("dotenv").config();
 
 const app = express();
@@ -104,9 +105,10 @@ bot.onText(/\/leaderboard/, async (msg) => {
 // Command to handle form submission between 5:00 AM and 6:00 AM
 bot.onText(/\/form/, (msg) => {
   const chatId = msg.chat.id;
-  const now = moment();
-  const startTime = moment("16:00:00", "HH:mm:ss");
-  const endTime = moment("17:00:00", "HH:mm:ss");
+  const now = moment().tz("Asia/Dhaka");
+  const startTime = moment.tz("16:00:00", "HH:mm:ss", "Asia/Dhaka");
+  const endTime = moment.tz("18:00:00", "HH:mm:ss", "Asia/Dhaka");
+
 
   if (now.isBetween(startTime, endTime)) {
     bot.sendMessage(chatId, "Good Morning! Please enter your name:");
