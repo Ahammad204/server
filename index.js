@@ -106,8 +106,8 @@ bot.onText(/\/leaderboard/, async (msg) => {
 bot.onText(/\/form/, (msg) => {
   const chatId = msg.chat.id;
   const now = moment().tz("Asia/Dhaka");
-  const startTime = moment.tz("16:00:00", "HH:mm:ss", "Asia/Dhaka");
-  const endTime = moment.tz("18:00:00", "HH:mm:ss", "Asia/Dhaka");
+  const startTime = moment.tz("18:00:00", "HH:mm:ss", "Asia/Dhaka");
+  const endTime = moment.tz("21:00:00", "HH:mm:ss", "Asia/Dhaka");
 
 
   if (now.isBetween(startTime, endTime)) {
